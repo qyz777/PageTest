@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        view.addSubview(pageView)
+        pageView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view)
+        }
     }
-
+    
+    lazy var pageView: PageView = {
+        let view = PageView()
+        view.backgroundColor = .white
+        return view
+    }()
 
 }
 
